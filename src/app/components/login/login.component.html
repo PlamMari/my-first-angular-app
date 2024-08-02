@@ -1,0 +1,49 @@
+<h1>Template form demo</h1>
+<h2>Login form</h2>
+
+<ng-container *ngIf="isUserLoggedIn">
+    User is logged in
+    <button (click)="handleLogout()">Logout</button>
+</ng-container>
+
+<ng-container *ngIf="!isUserLoggedIn">
+    <form #loginForm="ngForm" (ngSubmit)="handleLogin()">
+        <div>
+            <label for="username">Username</label>
+            <!-- <input type="text" id="username" ngModel name="username" required minlength="3" maxlength="6" 
+            #username="ngModel"/> -->
+            <input [(ngModel)]="username" name="username"/>
+            <p>{{username}}</p>
+        </div>
+        <!-- <ng-container *ngIf="username.touched && username.invalid">
+            //last changes {{ username.errors | json }} -->
+    
+            <!-- <div *ngIf="username.errors && username.errors['required']">
+                Field is required
+            </div>
+    
+            <div *ngIf="username.errors && username.errors['minlength']">
+                Username must be at least 3 characters long
+            </div>
+        </ng-container> -->
+    
+        <div ngModelGroup="passwords" #passwords="ngModelGroup">
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" ngModel name="password" required/>
+            </div>
+            <div>
+                <label for="repass">Repeat Password</label>
+                <input type="password" id="repass" ngModel name="repass" required/>
+            </div>
+        </div>
+        
+        <ng-container *ngIf="passwords.touched && passwords.invalid">
+            Password fields are required
+        </ng-container>
+    
+        <input type="submit" value="Login" [disabled]="loginForm.invalid"/>
+        <button type="button" value="Clear" (click)="onFormClear()">Clear</button>
+    </form>
+</ng-container>
+

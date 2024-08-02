@@ -1,0 +1,22 @@
+<!-- <div>
+    <h3>Abc component as a parent</h3>
+    <h2>Children listed down below</h2>
+    <ul>
+        <app-uvw></app-uvw>
+        <app-uvw></app-uvw>
+        <app-uvw></app-uvw>
+        <app-uvw></app-uvw>
+    </ul>
+    </div> -->
+
+    
+
+    <ng-container *ngIf="loading">
+        <p>Loading...</p>
+    </ng-container>
+    <ng-container *ngIf="!loading">
+        <div>{{user.email}}</div>
+        <div>{{user.name}}</div>
+    </ng-container>
+
+    <button (click)="handleAddToFavs">Add Favorite</button>

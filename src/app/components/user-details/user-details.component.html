@@ -1,0 +1,15 @@
+<h1>User details page</h1>
+
+<div>
+    <!-- <ng-container *ngIf="loading">
+        <p>Loading ...</p>
+    </ng-container> -->
+    <!-- <p>ID: {{user && user.id}}</p> -->
+
+    <!-- <ng-container *ngIf="!loading"> -->
+    <ng-container *ngIf="user">
+        <p>ID: {{user['id']}}</p>
+        <p>Name: {{user['name']}}</p>
+        <p>Email: {{user['email']}}</p>
+    </ng-container>
+</div>

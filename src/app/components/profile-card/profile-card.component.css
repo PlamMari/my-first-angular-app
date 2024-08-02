@@ -1,0 +1,13 @@
+.profile-wrapper {
+    border: 2px solid #985ea9;
+    margin: 20px;
+    padding: 20px;
+}
+
+.image-wrapper {
+    width: 200px;    
+}
+
+.image-wrapper img {
+    width: 100%;
+}

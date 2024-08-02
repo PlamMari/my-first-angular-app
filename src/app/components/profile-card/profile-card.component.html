@@ -1,0 +1,13 @@
+<div [ngClass]="'profile-wrapper'">
+    <h2>Profile page</h2>
+    <p>Username</p>
+    <div [ngClass]="'image-wrapper'">
+        <ng-container *ngIf="isMale">
+            <img [src]="profileImgUrlMale"/>
+        </ng-container>
+        <ng-container *ngIf="!isMale">
+            <img [src]="profileImgUrlFemale"/>
+        </ng-container>
+        
+    </div>
+</div>

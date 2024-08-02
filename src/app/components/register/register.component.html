@@ -1,0 +1,40 @@
+<h1>Register form demo</h1>
+<h2>Register</h2>
+
+<form [formGroup]="registerFormGroup" (ngSubmit)="handleRegister()">
+    <div>
+        <label for="firstname">First name</label>
+        <input type="text" name="" id="firstname" formControlName="firstname">
+    </div>
+
+    <ng-container *ngIf="registerFormGroup.controls['firstname'].touched && registerFormGroup.controls['firstname'].invalid">
+        <div *ngIf="registerFormGroup.controls['firstname'].errors?.['required']">
+            First name is required
+        </div>
+
+        <div *ngIf="registerFormGroup.controls['firstname'].errors?.['minlength']">
+            First name must be at least 5 characters long
+        </div>
+    </ng-container>
+
+    <div>
+        <label for="lastname">Last name</label>
+        <input type="text" name="" id="lastname" formControlName="lastname">
+    </div>
+    <div>
+        <label for="username">Username</label>
+        <input type="text" name="" id="username" formControlName="username">
+    </div>
+
+    <div formGroupName="passwords">
+        <div>
+            <label for="password">Password</label>
+            <input type="text" name="" id="password" formControlName="password">
+        </div>
+        <div>
+            <label for="repass">Repeat password</label>
+            <input type="text" name="" id="repass" formControlName="repass">
+        </div>
+    </div>
+    <input type="submit" value="Register">
+</form>

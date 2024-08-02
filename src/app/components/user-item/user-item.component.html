@@ -1,0 +1,21 @@
+<div [ngClass]="'user-item-container'">
+    <h2>User item {{userData.id}} // {{userData.name}} // {{userData.email}}</h2>
+    <label>Name: <input type="text" #name/></label>
+    <label>Email: <input type="text" #email/></label>
+    <label>ID: <input type="text" #id/></label>
+    <button (click)="addNewUser(name, email, id)">Add new user </button>
+</div>
+
+<!-- <div>
+    <h2>Pipes demo</h2>
+    <p>{{userData.name | uppercase}}</p>
+    <p>{{userData.name | uppercase | lowercase}}</p>
+
+    <div>{{currentDate | date: 'fullDate'}}</div>
+    <div>{{currentDate | date: 'MM/dd/yyyy'}}</div>
+
+    <div>First custom pipe: {{pipeText | firstCustom }} </div>
+    <div>Second custom pipe: {{pipeText | secondCustom: 3 }} </div> 
+</div> -->
+
+<button (click)="showUserDetails()">Details</button>

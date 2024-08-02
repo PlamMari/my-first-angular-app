@@ -1,0 +1,6 @@
+<div>
+    <h1>Users container</h1>    
+    <ng-container *ngFor="let user of users">
+        <app-user-item [userData]="user" (newUser)="handleAddNewUser($event)" />
+    </ng-container>
+</div>

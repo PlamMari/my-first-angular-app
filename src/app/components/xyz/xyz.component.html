@@ -1,0 +1,34 @@
+<!-- <div>
+    <h1>Hello, Angular!</h1>
+    <div>xyz works!</div>
+    <h2>Our Abc component below</h2>
+    <app-abc></app-abc>
+</div> -->
+
+<div [ngClass]="'page-wrapper'">
+    <h1>User navigation demo</h1>
+    <h2>Directives</h2>
+    <nav>
+        <ul [ngStyle]="{'display':'flex', 'list-style':'none'}" [ngClass]="'navigation-ul'">
+            <li>Home</li>
+            <li>Catalog</li>
+            <ng-container *ngIf="!hasUser">
+                <li (click)="toggleHasUser()" [ngClass]="'user'">Login</li>
+            </ng-container>
+            <ng-container *ngIf="hasUser">
+                <li (click)="toggleHasUser()" [ngClass]="'user'">Logout</li>
+            </ng-container>            
+        </ul>
+    </nav>
+    <div>
+        <ng-container *ngIf="hasUser">
+            <app-profile-card />
+        </ng-container>
+        
+    </div>
+    <div>
+        <ng-container *ngFor="let movie of movies">
+            <app-movie-card />
+        </ng-container>
+    </div>
+</div>
